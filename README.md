@@ -1,6 +1,49 @@
 # TOPSIS implementation in Python
+
+This repository provides a Python implementation of the Technique for Order of Preference by Similarity to Ideal Solution (TOPSIS), a method for multiple-criteria decision analysis.
+
+## Installation
+
+You can install this package using pip:
+
+```bash
+pip install .
+```
+
+## Usage
+
+Here is a simple example of how to use the `topsis` package:
+
+```python
+import pandas as pd
+from topsis import TOPSIS
+
+# Load the data from the sample file
+path = ""
+name= "Sample.xlsx"
+
+Data = pd.read_excel(path + name)
+Data.index = Data['Alternatives']
+Data = Data.iloc[:, 1:]
+
+# Define the weights and attribute types
+weights = [0.2, 0.2, 0.2, 0.2, 0.2]
+PC = [1, 1, 1, 1, 1] # 1 for profit, 0 for cost
+
+# Run the TOPSIS algorithm
+Output = TOPSIS(Data, weights, PC)
+
+# Display the results
+Scores=pd.DataFrame(Output[1])
+Normalized_Weighted_Decision_Matrix = Output[0]
+df=pd.concat([Normalized_Weighted_Decision_Matrix, Scores], axis=1)
+print(df)
+```
+
+## TOPSIS Method Overview
+
 Technique for Order of Preference by Similarity to Ideal Solution (TOPSIS)
-CHING-LAI Hwang and Yoon introduced TOPSIS in 1981 in their Multiple Criteria Decision Making (MCDM) and Multiple Criteria Decision Analysis (MCDA) methods [1]. TOPSIS strives to minimize the distance between the positive ideal solution and the chosen alternative, as well as to maximize the distance between the negative ideal solution and the chosen alternative. [2]. TOPSIS, in a nutshell, aids researchers to rank alternative items by identifying some criteria. We present alternative information and the criteria for each in the following decision matrix:
+CHING-LAI Hwang and Yoon introduced TOPSIS in 1981 in their Multiple Criteria Decision Making (MCDM) and Multiple Criteria Decision Analysis (MCDA) methods [1]. TOPSIS strives to minimize the distance between the positive ideal solution and the chosen alternative, as well as to maximize the aistance between the negative ideal solution and the chosen alternative. [2]. TOPSIS, in a nutshell, aids researchers to rank alternative items by identifying some criteria. We present alternative information and the criteria for each in the following decision matrix:
 ![image](https://user-images.githubusercontent.com/44522286/131339802-c16bb37c-6479-40e5-b28f-b79471b9bb26.png)
 It is possible that some criteria are more effective than others. Therefore, some weights are given to their importance. It is required that the summation of n weights equals one.
 
