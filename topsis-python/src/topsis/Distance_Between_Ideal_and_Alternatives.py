@@ -10,4 +10,4 @@ def Euclidean_Distance(Ideal_Points, Weighted_normalizaed_Decision_matrix, Attri
     Positive_Si = np.sum((Weighted_normalizaed_Decision_matrix-Positive_Ideal_Point)**2, axis = 1)**0.5
 
     C = Negative_Si/(Negative_Si + Positive_Si)
-    return (Weighted_normalizaed_Decision_matrix,C)
+    return C
