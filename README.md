@@ -31,7 +31,7 @@ decision_matrix = pd.DataFrame(data).set_index('Alternatives')
 
 # Define the weights and attribute types
 weights = [0.4, 0.3, 0.3]
-attribute_types = ['max', 'max', 'min']
+attribute_types = [1, 1, 0]
 
 # Run the TOPSIS algorithm
 topsis_result = TOPSIS(decision_matrix, weights, attribute_types)
