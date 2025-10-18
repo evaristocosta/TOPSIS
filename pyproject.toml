@@ -3,12 +3,13 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "topsis-python"
+name = "topsis-python-hamedbaziyad"
 version = "0.0.1"
 authors = [
-  { name="Jules", email="jules@example.com" },
+  { name="Hamed Baziyad" },
+  { name="Lucas Piccioni Costa", email="lucascosta74@gmail.com" }
 ]
-description = "A simple TOPSIS implementation"
+description = "Technique for Order of Preference by Similarity to Ideal Solution (TOPSIS) CHING-LAI Hwang and Yoon introduced TOPSIS in 1981 in their Multiple Criteria Decision Making (MCDM) and Multiple Criteria Decision Analysis (MCDA) methods"
 readme = "README.md"
 requires-python = ">=3.7"
 license = { file = "LICENSE" }

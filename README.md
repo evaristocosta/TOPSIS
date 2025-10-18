@@ -1,5 +1,7 @@
 # TOPSIS Python
 
+> IMPORTANT: This implementation was originally developed by [Intelizer](https://github.com/hamedbaziyad/TOPSIS). I just modified it (using [Jules](https://jules.google.com/)) to be a pip-installable package.
+
 This repository provides a Python implementation of the Technique for Order of Preference by Similarity to Ideal Solution (TOPSIS), a method for multiple-criteria decision analysis.
 
 ## Installation
@@ -7,7 +9,7 @@ This repository provides a Python implementation of the Technique for Order of P
 You can install this package using pip:
 
 ```bash
-pip install topsis-python
+pip install topsis-python-hamedbaziyad
 ```
 
 ## Usage
