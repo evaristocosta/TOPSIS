@@ -1,5 +1,6 @@
 from .Weighted_Normalized_Decision_Matrix import *
 
+
 def Ideal_Solution(Weighted_normalizaed_Decision_matrix, Attribute_Type):
     Positive_Ideal_Solutions = []
     Negative_Ideal_Solutions = []

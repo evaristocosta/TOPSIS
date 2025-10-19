@@ -3,8 +3,8 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "topsis-python-hamedbaziyad"
-version = "0.0.1"
+name = "topsis-hamedbaziyad"
+version = "0.0.2"
 authors = [
   { name="Hamed Baziyad" },
   { name="Lucas Piccioni Costa", email="lucascosta74@gmail.com" }
@@ -19,13 +19,12 @@ classifiers = [
 ]
 dependencies = [
     "pandas",
-    "numpy",
-    "openpyxl",
+    "numpy"
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/pypa/sampleproject"
-"Bug Tracker" = "https://github.com/pypa/sampleproject/issues"
+"Homepage" = "https://github.com/evaristocosta/TOPSIS"
+"Bug Tracker" = "https://github.com/evaristocosta/TOPSIS/issues"
 
 [tool.setuptools.packages.find]
-where = ["topsis-python/src"]
+where = ["topsis_hamedbaziyad/src"]

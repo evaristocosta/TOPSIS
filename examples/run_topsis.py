@@ -1,23 +1,23 @@
 import pandas as pd
-from topsis import TOPSIS
+from topsis_hamedbaziyad import TOPSIS
+
+# for running this example, you need the package 'openpyxl'
 
 # Load the data from the sample file
-path = "examples/"
-name= "Sample.xlsx"
+file_name = "examples/sample.csv"
 
-Data = pd.read_excel(path + name)
-Data.index = Data['Alternatives']
-Data = Data.iloc[:, 1:]
+data = pd.read_csv(file_name)
+data.index = data["Alternatives"]
+data = data.iloc[:, 1:]
 
 # Define the weights and attribute types
 weights = [0.2, 0.2, 0.2, 0.2, 0.2]
-PC = [1, 1, 1, 1, 1] # 1 for profit, 0 for cost
+PC = [1, 1, 1, 1, 1]  # 1 for profit, 0 for cost
 
 # Run the TOPSIS algorithm
-Output = TOPSIS(Data, weights, PC)
+output = TOPSIS(data, weights, PC)
+topsis_result = pd.DataFrame(output).sort_values(by=0, ascending=False)
+topsis_result.columns = ["Performance Score"]
 
 # Display the results
-Scores=pd.DataFrame(Output[1])
-Normalized_Weighted_Decision_Matrix = Output[0]
-df=pd.concat([Normalized_Weighted_Decision_Matrix, Scores], axis=1)
-print(df)
+print(topsis_result)

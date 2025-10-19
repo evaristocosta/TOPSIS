@@ -5,7 +5,7 @@ def Weight_Prod(Decision_Matrix, weights):
         if Decision_Matrix.shape[1] != len(weights):
             print("Shape of weights is not satisfied.")
         else:
-            for i in range (0, Decision_Matrix.shape[1]):
-                Decision_Matrix.iloc[:, i] = Decision_Matrix.iloc[:, i]*weights[i]
+            for i in range(0, Decision_Matrix.shape[1]):
+                Decision_Matrix.iloc[:, i] = Decision_Matrix.iloc[:, i] * weights[i]
 
         return Decision_Matrix

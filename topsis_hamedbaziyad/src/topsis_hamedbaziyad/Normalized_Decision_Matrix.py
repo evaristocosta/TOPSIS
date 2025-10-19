@@ -1,5 +1,6 @@
 from .Normalization import *
 
+
 def Normalize_Decision_Matrix(Decision_Matrix, Attribute_Type, Normal_Method):
     Decision_Matrix = Decision_Matrix.astype(float)
     for i in range(0, len(Attribute_Type)):
